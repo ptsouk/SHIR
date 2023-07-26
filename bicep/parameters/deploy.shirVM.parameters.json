@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/8ec43e9c-d13a-4219-a0d5-43292d705a78/resourceGroups/purview-rg/providers/Microsoft.KeyVault/vaults/mypurview-kv"
+        },
+        "secretName": "SHIRadminUsername"
+      }
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/8ec43e9c-d13a-4219-a0d5-43292d705a78/resourceGroups/purview-rg/providers/Microsoft.KeyVault/vaults/mypurview-kv"
+        },
+        "secretName": "SHIRadminpassword"
+      }
+    },
+    "vmSize": {
+      "value": "Standard_B2s"
+    },
+    "OSVersion": {
+      "value": "2022-datacenter-azure-edition"
+    },
+    "tags": {
+      "value": {
+        "Project": "Purview"
+      }
+    }
+  }
+}
